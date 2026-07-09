@@ -63,7 +63,10 @@
   .hero .light{position:absolute;inset:0;background:var(--light);pointer-events:none}
   .hero-in{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:112px 40px 0;text-align:center}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1.24;letter-spacing:-.005em;max-width:730px;margin:0 auto}
-  .prompt{position:relative;z-index:2;max-width:900px;margin:52px auto 0;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:26px 26px 20px;box-shadow:var(--elev-2);text-align:left}
+  .prompt-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-35);text-align:center;margin:84px 0 16px}
+  .prompt-label b{color:var(--ink-55);font-weight:400}
+  .prompt{position:relative;z-index:2;max-width:900px;margin:0 auto;background:var(--bg);border:1px solid var(--line-2);border-radius:14px;padding:26px 26px 20px;box-shadow:var(--elev-2);text-align:left;transition:box-shadow .2s ease, transform .2s ease}
+  .prompt:hover{transform:translateY(-2px);box-shadow:var(--elev-3)}
   .prompt .pt{font-size:20px;color:var(--ink-55);line-height:1.4}
   .prompt .pt b{color:var(--ink);font-weight:600}
   .caret{display:inline-block;width:2px;height:1.05em;background:var(--ink);margin-left:2px;vertical-align:-3px;animation:caret 1.1s steps(1,end) infinite}
@@ -162,6 +165,7 @@
   <div class="light"></div>
   <div class="hero-in">
     <h1>The largest corpus of peacebuilding data in one place, curated by experts, accessible through a custom-built neural agent.</h1>
+    <div class="prompt-label">Try it &mdash; <b>describe what you need</b></div>
     <div class="prompt">
       <div class="pt">Create a <b>literature review</b> exploring the conflict in <b>Sudan.</b><span class="caret"></span></div>
       <div class="pb">
