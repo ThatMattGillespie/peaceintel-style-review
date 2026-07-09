@@ -1,11 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="warm">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Peace Intel — Style Review</title>
-<script>try{var t=localStorage.getItem('pi-theme');if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@400;700;800&family=Space+Mono:wght@400;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&display=swap" rel="stylesheet">
@@ -25,17 +24,6 @@
     --sh:20,19,16;
     --serif:"Nanum Myeongjo",serif; --sans:"DIN 2014","DM Sans",sans-serif; --mono:"Space Mono",monospace;
   }
-  :root[data-theme="clean"]{
-    --bg:#FCFDFE; --panel:#EEF2F6; --ink:#0F1419;
-    --ink-70:rgba(15,20,25,.70); --ink-55:rgba(15,20,25,.55); --ink-35:rgba(15,20,25,.34);
-    --line:rgba(15,20,25,.10); --line-2:rgba(15,20,25,.16);
-    --accent:#3196E8;            /* blue text accent */
-    --kicker:#3196E8;            /* blue section labels */
-    --link-h:#3196E8;
-    --grid:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Cline x1='0' y1='10' x2='20' y2='10' stroke='%231C2A36' stroke-opacity='0.07' stroke-width='0.7' stroke-dasharray='3 2'/%3E%3Cline x1='10' y1='0' x2='10' y2='20' stroke='%231C2A36' stroke-opacity='0.07' stroke-width='0.7' stroke-dasharray='3 2'/%3E%3Ccircle cx='10' cy='10' r='0.9' fill='%231C2A36' fill-opacity='0.08'/%3E%3C/svg%3E");
-    --light:radial-gradient(ellipse 80% 70% at 50% 30%, #ffffff 0%, rgba(255,255,255,0) 60%);
-    --sh:15,23,32;
-  }
   :root{
     --elev-1:0 1px 2px rgba(var(--sh),.04), 0 6px 16px -10px rgba(var(--sh),.18);
     --elev-2:0 2px 4px rgba(var(--sh),.05), 0 22px 46px -28px rgba(var(--sh),.30);
@@ -54,7 +42,6 @@
   nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 82%, transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
   .nav-in{max-width:1120px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
   nav .logo{height:24px;width:auto}
-  html[data-theme="clean"] nav .logo{filter:grayscale(1) brightness(.4)}
   .nav-links{display:flex;gap:30px;font-size:15px;color:var(--ink-70);font-weight:500;align-items:center}
   .nav-links span{cursor:pointer}
 
@@ -82,7 +69,6 @@
   .chip{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;background:var(--ink);color:var(--bg);border-radius:8px;padding:8px 16px}
   .logos{display:flex;align-items:center;justify-content:center;gap:56px;margin-top:32px;flex-wrap:wrap}
   .logo-p{width:auto;filter:brightness(0);opacity:.46}
-  html[data-theme="clean"] .logo-p{filter:grayscale(1) brightness(.35)}
   .logo-p.epi{height:42px}.logo-p.afp{height:50px}.logo-p.acled{height:29px}
 
   section{padding:104px 0}
@@ -100,7 +86,6 @@
 
   .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
   .card{background:#1C1A16;border-radius:14px;padding:30px 28px 26px;color:#fff;display:flex;flex-direction:column}
-  html[data-theme="clean"] .card{background:#13202B}
   .card .tag{align-self:flex-start;font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;background:transparent;border:1px solid rgba(255,255,255,.22);border-radius:7px;padding:6px 11px;color:rgba(255,255,255,.72);margin-bottom:22px}
   .card h3{font-family:var(--serif);font-weight:700;font-size:23px;line-height:1.28}
   .card p{font-size:14px;line-height:1.62;color:rgba(255,255,255,.6);margin-top:14px;flex:1}
@@ -134,19 +119,11 @@
 
   footer{border-top:1px solid var(--ink);padding:64px 0 0;display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap}
   footer .logo{height:23px}
-  html[data-theme="clean"] footer .logo{filter:grayscale(1) brightness(.4)}
   .fcols{display:flex;gap:64px;flex-wrap:wrap}
   .fcol h5{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-35);margin-bottom:16px}
   .fcol a{display:block;font-family:var(--sans);font-size:14px;color:var(--ink-70);text-decoration:none;margin-bottom:11px}
   .fcol a:hover{color:var(--link-h)}
   .footbar{border-top:1px solid var(--line);margin-top:44px;padding:22px 0 40px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-35)}
-
-  /* theme switch */
-  .switch{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);z-index:100;display:flex;align-items:center;gap:2px;
-    background:var(--bg);border:1px solid var(--line-2);border-radius:999px;padding:5px;box-shadow:var(--elev-2)}
-  .switch .lbl{font-family:var(--mono);font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-35);padding:0 10px}
-  .switch button{font-family:var(--mono);font-size:12px;letter-spacing:.04em;border:none;background:transparent;color:var(--ink-55);padding:8px 18px;border-radius:999px;cursor:pointer;transition:.18s}
-  .switch button.on{background:var(--ink);color:var(--bg)}
 
   @media (prefers-reduced-motion:reduce){.caret{animation:none}}
   @media (max-width:900px){.stats,.cards{grid-template-columns:1fr 1fr}.hero h1{font-size:38px}.nav-links{display:none}}
@@ -264,22 +241,8 @@
   <div class="footbar"><span>&copy; 2026 Peace Intel</span><span>A project in collaboration with EPI, AfP &amp; ACLED</span></div>
 </div>
 
-<div class="switch">
-  <span class="lbl">Style</span>
-  <button data-theme-btn="warm">Warm</button>
-  <button data-theme-btn="clean">Clean</button>
-</div>
-
 <script>
   (function(){
-    function apply(t){
-      document.documentElement.setAttribute('data-theme',t);
-      try{localStorage.setItem('pi-theme',t);}catch(e){}
-      document.querySelectorAll('[data-theme-btn]').forEach(function(b){b.classList.toggle('on', b.getAttribute('data-theme-btn')===t);});
-    }
-    var cur=document.documentElement.getAttribute('data-theme')||'warm';
-    apply(cur);
-    document.addEventListener('click',function(e){var b=e.target.closest('[data-theme-btn]'); if(b) apply(b.getAttribute('data-theme-btn'));});
     var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('lit');io.unobserve(x.target);}});},{threshold:.35});
     document.querySelectorAll('.ctaband').forEach(function(el){io.observe(el);});
   })();
