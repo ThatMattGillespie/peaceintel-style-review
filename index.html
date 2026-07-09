@@ -47,7 +47,10 @@
 
   /* hero */
   .hero{position:relative;overflow:hidden;padding-bottom:40px}
-  .hero .light{position:absolute;inset:0;background:var(--light);pointer-events:none}
+  .hero-vid{position:absolute;top:0;left:0;right:0;height:100vh;z-index:0;overflow:hidden;pointer-events:none;opacity:.18;mix-blend-mode:multiply;
+    -webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
+  .hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;image-rendering:pixelated;filter:grayscale(1) contrast(1.05)}
+  .hero .light{position:absolute;inset:0;z-index:1;background:var(--light);pointer-events:none}
   .hero-in{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:112px 40px 0;text-align:center}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1.24;letter-spacing:-.005em;max-width:730px;margin:0 auto}
   .prompt-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-35);text-align:center;margin:84px 0 16px}
@@ -140,6 +143,7 @@
 </nav>
 
 <header class="hero">
+  <div class="hero-vid"><video src="hero-dither.mp4" autoplay muted loop playsinline></video></div>
   <div class="light"></div>
   <div class="hero-in">
     <h1>The largest corpus of peacebuilding data in one place, curated by experts, accessible through a custom-built neural agent.</h1>
