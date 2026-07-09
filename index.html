@@ -47,13 +47,21 @@
 
   /* hero */
   .hero{position:relative;overflow:hidden;padding-bottom:40px}
-  .hero-vid{position:absolute;top:0;left:0;right:0;height:100vh;z-index:0;overflow:hidden;pointer-events:none;opacity:.18;mix-blend-mode:multiply;
-    -webkit-mask-image:linear-gradient(to bottom,#000 82%,transparent 100%);mask-image:linear-gradient(to bottom,#000 82%,transparent 100%)}
-  .hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 42%;image-rendering:pixelated;filter:grayscale(1) contrast(1.05)}
-  .hero .light{position:absolute;inset:0;z-index:1;background:var(--light);pointer-events:none}
-  .hero-in{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:112px 40px 0;text-align:center}
+  .hero-stage{position:relative;max-width:1120px;margin:0 auto;padding:84px 40px 20px;overflow:hidden}
+  .hero-vid{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.18;mix-blend-mode:multiply;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 72%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 12%,#000 72%,transparent 100%)}
+  .hero-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%;image-rendering:pixelated;filter:grayscale(1) contrast(1.05)}
+  .hero-stage .light{position:absolute;inset:0;z-index:1;background:var(--light);pointer-events:none}
+  .hero-stage h1{position:relative;z-index:2}
+  /* dithered video band behind a content section */
+  .sec-vid{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;opacity:.16;mix-blend-mode:multiply;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0%,#000 14%,#000 86%,transparent 100%)}
+  .sec-vid video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;image-rendering:pixelated;filter:grayscale(1) contrast(1.05)}
+  .usecases{position:relative;overflow:hidden}
+  .usecases .wrap{position:relative;z-index:1}
+  .hero-in{position:relative;z-index:2;max-width:980px;margin:0 auto;padding:0 40px 0;text-align:center}
   .hero h1{font-family:var(--serif);font-weight:700;font-size:46px;line-height:1.24;letter-spacing:-.005em;max-width:730px;margin:0 auto}
-  .prompt-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-35);text-align:center;margin:84px 0 16px}
+  .prompt-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-35);text-align:center;margin:48px 0 16px}
   .prompt-label b{color:var(--ink-55);font-weight:400}
   .prompt{position:relative;z-index:2;max-width:900px;margin:0 auto;background:var(--bg);border:1px solid var(--line-2);border-radius:14px;padding:26px 26px 20px;box-shadow:var(--elev-2);text-align:left;transition:box-shadow .2s ease}
   .prompt:hover{box-shadow:var(--elev-3)}
@@ -143,10 +151,12 @@
 </nav>
 
 <header class="hero">
-  <div class="hero-vid"><video src="hero-dither-loop2.mp4" autoplay muted loop playsinline></video></div>
-  <div class="light"></div>
-  <div class="hero-in">
+  <div class="hero-stage">
+    <div class="hero-vid"><video src="hero-dove.mp4" autoplay muted loop playsinline></video></div>
+    <div class="light"></div>
     <h1>The largest corpus of peacebuilding data in one place, curated by experts, accessible through a custom-built neural agent.</h1>
+  </div>
+  <div class="hero-in">
     <div class="prompt-label">Try it &mdash; <b>describe what you need</b></div>
     <div class="prompt">
       <div class="pt">Create a <b>literature review</b> exploring the conflict in <b>Sudan.</b><span class="caret"></span></div>
@@ -186,7 +196,8 @@
   </div>
 </section>
 
-<section>
+<section class="usecases">
+  <div class="sec-vid"><video src="usecases-glass.mp4" autoplay muted loop playsinline></video></div>
   <div class="wrap">
     <div class="sec-head">
       <div class="kicker">Use Cases</div>
